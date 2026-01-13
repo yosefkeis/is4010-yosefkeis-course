@@ -32,7 +32,9 @@ jobs:
 
       - name: Run Week 00 Python tests
         if: steps.check_file.outputs.exists == 'true'
-        run: pytest week00/tests/ -v
+        run: |
+          export PYTHONPATH="${PYTHONPATH}:week00"
+          pytest week00/tests/ -v
 
       - name: Lab file not found
         if: steps.check_file.outputs.exists == 'false'
