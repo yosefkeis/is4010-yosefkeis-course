@@ -54,8 +54,7 @@ is4010-course/
 ├── week14/            # Rust CLI Application
 ├── resources/         # Setup guides and documentation
 │   ├── SETUP_GUIDE.md
-│   ├── TROUBLESHOOTING.md
-│   └── lecture-notes/
+│   └── TROUBLESHOOTING.md
 ├── .github/           # GitHub Actions CI/CD workflows
 │   └── workflows/
 │       ├── week01.yml through week14.yml
@@ -308,7 +307,6 @@ cargo --version
 - **Course Materials**: `is4010-course-template/` repository
 - **Textbook**: *From Script to System* (aiappdev book)
 - **Setup Guide**: See `is4010-course-template/resources/SETUP_GUIDE.md`
-- **Lecture Notes**: See `is4010-course-template/resources/lecture-notes/`
 
 ## Getting Help
 
