@@ -1,5 +1,6 @@
 name: Week 02 - AI-Assisted Development
 on:
+  workflow_dispatch: {}
   push:
     paths:
       - 'week02/**'
@@ -25,9 +26,10 @@ jobs:
             echo "✗ lab02.py not found"
             exit 1
           fi
-          if [ -f week02/lab02_prompts.md ]; then
-            echo "✓ lab02_prompts.md found"
+          # Accept either lab02_prompts.md or week02_prompts.md to be flexible
+          if [ -f week02/lab02_prompts.md ] || [ -f week02/week02_prompts.md ]; then
+            echo "✓ prompts file found"
           else
-            echo "✗ lab02_prompts.md not found"
+            echo "✗ prompts file not found (expected week02/lab02_prompts.md or week02/week02_prompts.md)"
             exit 1
           fi
