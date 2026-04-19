@@ -23,7 +23,7 @@ jobs:
       - name: Check if lab file exists
         id: check_file
         run: |
-          if [ -f "week07/lab07.py" ]; then
+          if [ -f "week07/lab07_contact_book.py" ]; then
             echo "exists=true" >> $GITHUB_OUTPUT
           else
             echo "exists=false" >> $GITHUB_OUTPUT
@@ -38,6 +38,6 @@ jobs:
       - name: Lab file not found
         if: steps.check_file.outputs.exists == 'false'
         run: |
-          echo "❌ week07/lab07.py not found"
+          echo "❌ week07/lab07_contact_book.py not found"
           echo "Create this file to start the lab"
           exit 1
