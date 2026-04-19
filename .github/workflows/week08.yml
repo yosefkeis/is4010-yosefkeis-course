@@ -20,10 +20,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Check if lab file exists
+      - name: Check if lab files exist
         id: check_file
         run: |
-          if [ -f "week08/lab08.py" ]; then
+          if [ -f "week08/weather.py" ] && [ -f "week08/weather_api.py" ] && [ -f "week08/favorites.py" ]; then
             echo "exists=true" >> $GITHUB_OUTPUT
           else
             echo "exists=false" >> $GITHUB_OUTPUT
@@ -35,9 +35,9 @@ jobs:
           export PYTHONPATH="${PYTHONPATH}:week08"
           pytest week08/tests/ -v
 
-      - name: Lab file not found
+      - name: Lab files not found
         if: steps.check_file.outputs.exists == 'false'
         run: |
-          echo "❌ week08/lab08.py not found"
-          echo "Create this file to start the lab"
+          echo "❌ Required lab files not found"
+          echo "Create weather.py, weather_api.py, and favorites.py to start the lab"
           exit 1

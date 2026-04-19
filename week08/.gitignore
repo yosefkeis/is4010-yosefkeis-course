@@ -1,0 +1,11 @@
+# API key configuration
+config.py
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Weather data cache
+weather_cache.json
+favorites.json
